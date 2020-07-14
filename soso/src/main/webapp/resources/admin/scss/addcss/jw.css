@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.menu_bar{width:100%;position: absolute;z-index: 100; background: #e82424;
+			top: 60px;left: 0; text-align: center; padding: 0 140px;}
+.menu_bar > div a{font-size: 20px; color: #fff; font-weight: 600;}
+.menu_list{width:100%; padding: 80px 140px;}
+.menu_list > div div.ml{padding: 5px; }
+.menu_list > div .menu_img{width:100%; height:300px; background:#ddd;}
+.menu_list > div .info{overflow:hidden; width:100%; padding:5px}
+.menu_list > div .info div.title{float:left;}
+.menu_list > div .info div.title p:nth-child(1){font-size:25px;}
+.menu_list > div .info div.detail{font-size:30px; float:right}
+
+.menu_list  .slick-prev.slick-arrow{
+	
+	
+}

@@ -23,11 +23,18 @@
 
   <!-- Custom styles for this template-->
   <link href="resources/admin/css/sb-admin-2.min.css" rel="stylesheet">
-  
+
     <!-- Bootstrap core JavaScript-->
   <script src="resources/admin/vendor/jquery/jquery.min.js"></script>
   <script src="resources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+	
+  <!-- slick -->
+  <script src="resources/admin/js/slick/jquery-1.12.4.min.js"></script>
+  <script src="resources/admin/js/slick/slick.min.js"></script>
+  <link href="resources/admin/js/slick/slick.css" rel="stylesheet">
+  <link href="resources/admin/js/slick/slick.min.js" rel="stylesheet">
+  
+  
   <!-- Core plugin JavaScript-->
   <script src="resources/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
@@ -46,6 +53,7 @@
   <link href="resources/admin/scss/addcss/layout.css" rel="stylesheet">
   <script src="resources/admin/scss/addcss/basic.js"></script>
 
+  <link href="resources/admin/scss/addcss/jw.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
