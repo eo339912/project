@@ -26,6 +26,7 @@ public class EmpController {
 //		return "emp/list";
 //	}
 	
+	
 	//등록폼
 	@RequestMapping("/insertFormEmp.do")
 	public String insertFormEmp(EmpVO vo) {
