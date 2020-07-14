@@ -19,7 +19,7 @@ public class MailController {
 	@RequestMapping("mailSending.do")
 	public String mailSending(HttpServletRequest request) {
 
-		String setfrom = "";
+		String setfrom = " ";
 		String tomail = request.getParameter("tomail"); // 받는 사람 이메일
 		String title = request.getParameter("title"); // 제목
 		String content = request.getParameter("content"); // 내용
