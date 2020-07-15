@@ -30,7 +30,7 @@ public class EmpController {
 	//등록폼
 	@RequestMapping("/insertFormEmp.do")
 	public String insertFormEmp(EmpVO vo) {
-		return "empty/emp/insertEmp";
+		return "emp/insertEmp";
 	}
 	
 	//등록처리
@@ -68,7 +68,7 @@ public class EmpController {
 	//emp관리
 	@RequestMapping("empClient")
 	public String empClient() {
-		return "admin/emp/empClient";
+		return "emp/empClient";
 	}
 	
 	//ajax 목록

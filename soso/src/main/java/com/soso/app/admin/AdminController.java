@@ -15,7 +15,7 @@ public class AdminController {
 	AdminMapper adminMapper;
     
 
-	// 등록폼
+	//사업자 등록폼
 	@RequestMapping("adminInsertForm")
 	public String adminInsertForm(AdminVO vo) {
 		return "basic/admin/adminInsertForm";
