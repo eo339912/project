@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 
 .box-title{
@@ -98,3 +99,51 @@ text-align: right
     border-left: 0;
     width: 210px;
 }
+=======
+@charset "UTF-8";
+
+.title{
+font-family: "Spoqa Han Sans",sans-serif;
+font-size: 12px;
+color: #212121;
+line-height: 150%;
+font-weight: normal;
+padding: 0;
+margin: 40px 0 10px 10px;
+}
+
+
+.line_table{
+font-family: "Spoqa Han Sans",sans-serif;
+font-size: 12px;
+color: #212121;
+line-height: 150%;
+font-weight: normal;
+margin: 0;
+padding: 0;
+width:100%;
+}
+
+ .line_table td,th{
+border-top: 1px solid #d5d5d5;
+}
+
+.line_color td,th{
+border-top: 1px solid #d5d5d5;
+}
+
+.line_color{
+font-family: "Spoqa Han Sans",sans-serif;
+font-size: 12px;
+color: #212121;
+line-height: 150%;
+font-weight: normal;
+margin: 0;
+padding: 0;
+}
+
+.line_table2 {
+	height: 15px;
+}
+
+>>>>>>> branch 'master' of https://github.com/eo339912/project.git

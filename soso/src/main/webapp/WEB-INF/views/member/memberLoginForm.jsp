@@ -4,10 +4,6 @@
 <html>
 <script src="https:////cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<!-- 추가사항
-아이디 (DB)중복체크
-정규식
-사업자 번호 데이터 장규식  -->
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -28,27 +24,6 @@ $(document).ready(function(){
 		 $(this).parent().children('.form-style').focus();
 	});
 });
-</script>
-<script type="text/javascript">
-function passwordChack() {
-    var pwd = document.twin.storePwd.value;
-    var confirmPW = document.twin.storePwd2.value;
-    if (pwd.length < 8 || pwd.length > 16) {
-        window.alert('비밀번호는 8글자 이상, 16글자 이하만 이용 가능합니다.');
-        document.getElementById('pwd').value=document.getElementById('pwdCheck').value='';
-        document.getElementById('same').innerHTML='';
-    }
-    if(document.getElementById('pwd').value!='' && document.getElementById('pwdCheck').value!='') {
-        if(document.getElementById('pwd').value==document.getElementById('pwdCheck').value) {
-            document.getElementById('same').innerHTML='비밀번호가 일치합니다.';
-            document.getElementById('same').style.color='green';
-        }
-        else {
-            document.getElementById('same').innerHTML='비밀번호가 일치하지 않습니다.';
-            document.getElementById('same').style.color='red';
-        }
-    }
-}
 </script>
 <head>
 
@@ -209,44 +184,32 @@ input[type="submit"].login:focus{outline: none;}
 		C52.9,70,63.5,41.3,70.9,26.4z"></path>
 </g>
 </svg>
-
-
-
-
 </div>
-<form action="adminInsert" method="post" name="frm" >
+	<form action="memberLogin" method="post" name="frm" >
 		<div class="form-item">
-			<p class="formLabel">사업자 아아디</p>
-			<input type="text" name="storeId" id="storeId" class="form-style" autocomplete="off" />
+			<p class="formLabel">Phone</p>
+			<input type="text" name="phone" id="phone" class="form-style"
+					autocomplete="off" />
 		</div>
 		<div class="form-item">
-			<p class="formLabel">비밀번호</p>
-			<input type="text" name="storePwd" id="storePwd" class="form-style" autocomplete="off" onchange="passwordChack()" id ="pwd"/>
+			<p class="formLabel">Password</p>
+			<input type="password" name="pwd" id="pwd"
+					class="form-style" />
+			<!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
+			<p>
+				</p>	
 		</div>
-		<div class="form-item">
-			<p class="formLabel">비밀번호 확인</p>
-			<input type="text" name="storePwd2" id="storePwd2" class="form-style" autocomplete="off"onchange="passwordChack()" id="pwdCheck"/>
-			<p><span id="same"></span></p>
-		</div>	
-		<div class="form-item">
-			<p class="formLabel">상호명</p>
-			<input type="text" name="storeName" id="storeName" class="form-style" autocomplete="off" />
-		</div>	
-		<div class="form-item">
-			<p class="formLabel">사업자번호</p>
-			<input type="text" name="storeNum" id="storeNum" class="form-style" autocomplete="off" />
-		</div>	
-		<div class="form-item">
-			<p class="formLabel">사업장 주소</p>
-			<input type="text" name="storeAddr" id="storeAddr" class="form-style" autocomplete="off" />
-		</div>	
-		<div class="form-item">
-			<p class="formLabel">계좌번호</p>
-			<input type="text" name="accountNum" id="accountNum" class="form-style" autocomplete="off" />
-		</div>	
-												
-		<p></p>	
-		<input type="submit" class="login pull-right" value="가입완료">
-</form>
+		<input type="submit" class="login pull-right" value="Log In">
+		</form>
+		<form action="memberInsertForm" method="post" name="frm1">
+		<input type="submit" class="login pull-right" value="일반가입">
+		</form>
+		<form action="adminInsertForm" method="post" name="frm2">
+		<input type="submit" class="login pull-right" value="사업자가입">
+		</form>
+</div>
+</div>
 </body>
+</html></body>
+
 </html>
