@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.soso.app.admin.mapper.AdminMapper;
+import com.soso.app.admin.service.AdminService;
 import com.soso.app.admin.service.AdminVO;
 
 
@@ -13,7 +13,7 @@ import com.soso.app.admin.service.AdminVO;
 public class AdminController {
 
 	@Autowired
-	AdminMapper adminMapper;
+	AdminService adminService;
     
 
 	//사업자 등록폼
@@ -25,7 +25,7 @@ public class AdminController {
 	// 등록처리
 	@RequestMapping("adminInsert")
 	public String adminInsert(AdminVO vo, Model model) {
-		adminMapper.adminInsert(vo);
+		adminService.adminInsert(vo);
 		//서비스 호출
 		
 		return "redirect:adminList";
@@ -44,7 +44,7 @@ public class AdminController {
 	  // 목록조회
 	  @RequestMapping("adminList") 
 	  public String adminList(Model model) {
-	  model.addAttribute("adminList", adminMapper.getAdminList(null)); 
+	  model.addAttribute("adminList", adminService.getAdminList(null)); 
 	  return "admin/admin/adminInsert";
 	  }
 	 /* 

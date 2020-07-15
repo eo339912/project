@@ -8,9 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.soso.app.member.mapper.MemberMapper;
+import com.soso.app.member.service.MemberService;
 import com.soso.app.member.service.MemberVO;
 
 
@@ -18,7 +17,7 @@ import com.soso.app.member.service.MemberVO;
 public class MemberController {
 
 	@Autowired
-	MemberMapper memberMapper;
+	MemberService memberService;
     
 	
 	@RequestMapping("memberLoginForm")
@@ -62,7 +61,7 @@ public class MemberController {
 	// 등록처리
 	@RequestMapping("memberInsert")
 	public String memberInsert(MemberVO vo, Model model) {
-		memberMapper.memberInsert(vo);
+		memberService.memberInsert(vo);
 		//서비스 호출
 		
 		return "redirect:adminList";
@@ -81,7 +80,7 @@ public class MemberController {
 	  // 목록조회
 	  @RequestMapping("memberList") 
 	  public String memberList(Model model) {
-	  model.addAttribute("memberList", memberMapper.getMemberList(null)); 
+	  model.addAttribute("memberList", memberService.getMemberList(null)); 
 	  return "loginSignUp/member/memberInsert";
 	  }
 	 /* 
