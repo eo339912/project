@@ -1,4 +1,4 @@
-package com.soso.app.member;
+package com.soso.app.member.service;
 
 import lombok.Data;   
 import lombok.NoArgsConstructor;

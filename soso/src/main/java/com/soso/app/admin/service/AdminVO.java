@@ -1,4 +1,4 @@
-package com.soso.app.admin;
+package com.soso.app.admin.service;
 
 import com.dbal.app.emp.EmpVO;
 
