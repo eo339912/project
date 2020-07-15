@@ -53,7 +53,7 @@
 #hd_wrap.over .gnb_dp1_wrap li.gnb_dp1 a:hover{font-weight:500;}
 
 /**/
-#hd_wrap.hd-up{position:fixed;}
+#hd_wrap.hd-up{position: relative;}
 #hd_wrap.hd-up #hd_top{display:none;}
 #hd_wrap.hd-up #hd_gnb{/*background:rgba(255,255,255,0.95);*/ position:relative;}
 #hd_wrap.hd-up #hd_gnb:before{content:""; position:absolute; z-index:1;top:0; left:0; width:100%; height:60px; background:rgba(255,255,255,1); border-bottom:1px solid #f1f1f1}
