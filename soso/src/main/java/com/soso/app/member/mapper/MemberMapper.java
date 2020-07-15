@@ -1,4 +1,4 @@
- package com.soso.app.mapper;
+package com.soso.app.member.mapper;
 
 import java.util.List;
 
@@ -6,18 +6,19 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.soso.app.admin.AdminVO;
+import com.soso.app.member.service.MemberVO;
+
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:/config/*-context.xml")
-public interface AdminMapper {
+public interface MemberMapper {
 
-	public AdminVO getAdmin(AdminVO adminVO);
+	public MemberVO getMember(MemberVO memberVO);
 	
-	public List<AdminVO> getAdminList(AdminVO adminVO);
+	public List<MemberVO> getMemberList(MemberVO memberVO);
 
-	public void adminInsert(AdminVO adminVO);
+	public void memberInsert(MemberVO memberVO);
 
 	/* public String getName(Integer id); */
 	

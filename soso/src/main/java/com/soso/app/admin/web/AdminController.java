@@ -1,38 +1,31 @@
-package com.soso.app.member;
+package com.soso.app.admin.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.soso.app.mapper.MemberMapper;
+import com.soso.app.admin.mapper.AdminMapper;
+import com.soso.app.admin.service.AdminVO;
 
 
 @Controller // Bean �벑濡�, DispacherServlet�씠 �씤�떇�븷 �닔 �엳�뒗 Controller濡� 蹂��솚 => @Compnent
-public class MemberController {
+public class AdminController {
 
 	@Autowired
-	MemberMapper memberMapper;
+	AdminMapper adminMapper;
     
-	//로그인
-	@RequestMapping("memberLogin")
-	public String memberLogin(MemberVO vo) {
-		
-		return "메인페이지로";
-	}
-	
-	
-	
-	// 가입
-	@RequestMapping("memberInsertForm")
-	public String memberInsertForm(MemberVO vo) {
-		return "loginSignUp/member/memberInsertForm";
+
+	//사업자 등록폼
+	@RequestMapping("adminInsertForm")
+	public String adminInsertForm(AdminVO vo) {
+		return "basic/admin/adminInsertForm";
 	}
 
 	// 등록처리
-	@RequestMapping("memberInsert")
-	public String memberInsert(MemberVO vo, Model model) {
-		memberMapper.memberInsert(vo);
+	@RequestMapping("adminInsert")
+	public String adminInsert(AdminVO vo, Model model) {
+		adminMapper.adminInsert(vo);
 		//서비스 호출
 		
 		return "redirect:adminList";
@@ -49,10 +42,10 @@ public class MemberController {
 	 */
 	
 	  // 목록조회
-	  @RequestMapping("memberList") 
-	  public String memberList(Model model) {
-	  model.addAttribute("memberList", memberMapper.getMemberList(null)); 
-	  return "loginSignUp/member/memberInsert";
+	  @RequestMapping("adminList") 
+	  public String adminList(Model model) {
+	  model.addAttribute("adminList", adminMapper.getAdminList(null)); 
+	  return "admin/admin/adminInsert";
 	  }
 	 /* 
 	 * // emp관리

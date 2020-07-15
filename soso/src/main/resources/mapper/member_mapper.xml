@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.soso.app.mapper.MemberMapper">
+<mapper namespace="com.soso.app.mapper.member.MemberMapper">
 
 
 <!-- 관리자(Admin) 조회 -->
-   <select id="getMember" parameterType="com.soso.app.member.MemberVO" resultType="memberVO">
+   <select id="getMember" parameterType="memberVO" resultType="memberVO">
       SELECT
       storeId,
       storePwd,
