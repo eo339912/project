@@ -8,21 +8,20 @@
 <!-- 관리자(Admin) 조회 -->
    <select id="getMember" parameterType="memberVO" resultType="memberVO">
       SELECT
-      storeId,
-      storePwd,
-      storeNum,
-      storeAddr,
-      storeName,
-      accountNum
-      FROM employees
-      WHERE storeId = #{storeId}
+      memberNum,
+      phone,
+      pwd,
+      email,
+      delAddr
+      FROM member
+      WHERE phone = #{phone}
    </select>
 
 <!-- 관리자들(Admin)리스트 조회 -->
    <select id="getMemberList" parameterType="memberVO" resultType="memberVO">   
       SELECT * 
       FROM member
-      ORDER BY memberId
+      ORDER BY memberNum
    </select>
 
    <insert id="memberInsert" parameterType="memberVO">  
