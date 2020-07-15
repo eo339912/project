@@ -25,7 +25,7 @@ public class MailController {
 	private JavaMailSender mailSender;
 
 	// mailSending 코드
-	@RequestMapping("mailSending.do")
+	@RequestMapping("mailSendingd.do")
 	public String mailSending(HttpServletRequest request) {
 
 		String setfrom = "";
