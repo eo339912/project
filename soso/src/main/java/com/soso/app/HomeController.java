@@ -13,7 +13,7 @@ public class HomeController {
 	
 	@Autowired
 	MenuService menuServce;
-	
+	//dd
 	@RequestMapping("/")
 	public String home(MenuVO menuVO) {
 		menuServce.getMenuList(menuVO);
