@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 public class MailVO {
 	String tomail;
 	String title;
-	String content;
+	String content;  
 	
 	
 	public String getTomail() {

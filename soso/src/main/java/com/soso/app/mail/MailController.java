@@ -14,8 +14,9 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.soso.app.mapper.MemberMapper;
-import com.soso.app.member.MemberVO;
+import com.soso.app.member.mapper.MemberMapper;
+import com.soso.app.member.service.MemberVO;
+
 
 @Controller
 public class MailController {
@@ -23,9 +24,13 @@ public class MailController {
 	private MemberMapper memberMapper;
 	@Autowired
 	private JavaMailSender mailSender;
-
+	@RequestMapping("mailwrite.do")
+	public String mailwrite() {
+		return "mail/mail";
+	}
+  
 	// mailSending 코드
-	@RequestMapping("mailSendingd.do")
+	@RequestMapping("mailSending.do")
 	public String mailSending(HttpServletRequest request) {
 
 		String setfrom = "";
@@ -63,7 +68,7 @@ public class MailController {
 				public void prepare(MimeMessage mimeMessage) throws Exception {
 					final MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 					helper.setFrom("zszs6363@gmail.com");
-					helper.setTo(vo.getTomail());
+					helper.setTo(member.getEmail());
 					helper.setSubject(vo.getTitle());
 					helper.setText(vo.getContent(), true);
 					FileSystemResource file = new FileSystemResource(new File("D:/test/test.jpg"));
