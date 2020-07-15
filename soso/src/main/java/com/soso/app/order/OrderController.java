@@ -12,5 +12,11 @@ public class OrderController {
 	public String orderInsert() {
 		return "order/orderInsert";
 	}
+	
+	//by혜원, 주문페이지 
+	@RequestMapping("/orderInsert2")
+	public String orderInsert2() {
+		return "order/orderInsert2";
+	}
 
 }
