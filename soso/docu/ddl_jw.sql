@@ -8,3 +8,4 @@ insert into menu values(2,'사이다',1000,'사진2','음료','청량감',1,'tes
 insert into seat values(1,'test', 1);
 
 commit;
+
