@@ -1,5 +1,8 @@
 package com.soso.app.member.web;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.soso.app.member.service.MemberService;
 import com.soso.app.member.service.MemberVO;
+
 
 
 @Controller // Bean �벑濡�, DispacherServlet�씠 �씤�떇�븷 �닔 �엳�뒗 Controller濡� 蹂��솚 => @Compnent
@@ -56,9 +60,29 @@ public class MemberController {
 		return "/member/memberInsertForm";
 	}
 
+	
+	//아이디 중복체크
+	@RequestMapping("IdDupCheck")
+	public void idDupCheck(MemberVO vo, HttpServletRequest request, HttpServletResponse response,PrintWriter out) throws IOException {
+		// 1.파라미터 받기
+		// 2.서비스 로직 처리
+		MemberVO dbVO = memberService.getMember(vo);
+		System.out.println(dbVO.getPhone());
+		// 3. 결과를 전송
+		out = response.getWriter();
+		if (dbVO.getPhone() == null) {
+			out.print("아이디 사용가능");
+		} else {
+			out.print("아이디 중복");
+		}
+
+	}
+
+	
 	// 등록처리
 	@RequestMapping("memberInsert")
 	public String memberInsert(MemberVO vo, Model model) {
+		
 		memberService.memberInsert(vo);
 		//서비스 호출
 		

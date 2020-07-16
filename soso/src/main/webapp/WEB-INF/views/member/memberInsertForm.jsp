@@ -9,6 +9,44 @@
 아이디 (DB)중복체크
 정규식
 사업자 번호 데이터 장규식  -->
+<script>
+function idDupCheck() {
+		//1. xhr 객체 생성
+		var xhttp = new XMLHttpRequest();
+
+		//2.콜백 함수 지정 (변경 될 때 실행 this = xhttp의 객체를 가리킴 응답 결과 :responseText)
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4) { //응답완료
+				if (this.status == 200) { //정상실행
+					console.log("ajax 요청 완료")
+					document.getElementById("result").innerHTML = this.responseText; // <span id = "result">여기에 inner를 출력</span><br/>
+				} else {
+					document.getElementById("result").innerHTML = this.status
+							+ this.statusText
+				}
+
+			} else {
+				//로딩중
+				document.getElementById("result").innerHTML = "로딩중";
+			}
+
+		};
+
+		var param = "phone=" + document.frm.phone.value;
+		xhttp.open("POST", "IdDupCheck?", true);//비동기여부 자리 , false(동기) ,true(비동기식)(순차적) 호출 -> 결과처리
+		xhttp.setRequestHeader("Content-type",
+				"application/x-www-form-urlencoded");
+		/* xhttp.open("GET", "../IdDupCheck.do?"+param, true); */
+		//4.서버 전송
+		xhttp.send(param);
+		/* xhttp.send(); */
+		console.log("ajax 요청 시작")
+	}
+</script>
+<script type="text/javascript">
+
+</script>
+
 <script src="resources/admin/scss/addcss/login-signUp.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/admin/scss/addcss/login-signUp.css"/>
 <head>
@@ -78,14 +116,13 @@
 
 
 
-</div>
-</div>
-</div>
+			
 <form action="memberInsert" method="post" name="frm" >
 		<div class="form-item">
 			<p class="formLabel">Phone</p>
-			<input type="text" name="phone" id="phone" class="form-style" autocomplete="off" />
+			<input type="text" name="phone" id="phone" class="form-style" autocomplete="off" onchange="idDupCheck()"/>
 		</div>
+		<span id="result"></span><br>
 		<div class="form-item">
 			<p class="formLabel">비밀번호</p>
 			<input type="text" name="pwd" id="pwd" class="form-style" autocomplete="off" onchange="passwordChack()" />
@@ -107,5 +144,8 @@
 		<p></p>	
 		<input type="submit" class="login pull-right" value="가입완료">
 </form>
+</div>
+</div>
+</div>
 </body>
 </html>
