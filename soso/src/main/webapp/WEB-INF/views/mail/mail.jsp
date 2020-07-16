@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
 <style>
 　.solid {border:2px solid #F0F;}
-.centered {display: table;
+</style>
+<style> .centered {display: table;
     top: 50%;
     position: absolute;
     left: 50%;
@@ -24,7 +27,9 @@ position: absolute;
 }
  </style>
 
-
+<head><title></title>
+</head>
+<body>
 <div class="centered">
 <div class="top_bar"></div>
 <div class="item">
@@ -33,9 +38,8 @@ position: absolute;
        <div>
         <input type="text" name="frommail" size="100"
         style="width: 100%" placeholder="보내는 사람 메일"
-        class="form-control">
-      </div> 
-      <div align="center"> 
+      </div>
+      <div align="center">
         <!-- 제목 -->
         <input type="text" name="title" size="100" rows="30"
         style="width: 100%" placeholder="제목을 입력해주세요"
@@ -44,7 +48,7 @@ position: absolute;
         <p>
           <div align="center">
           <!-- 내용 -->
-            <textarea name="contents" cols="120" rows="12"
+            <textarea name="content" cols="120" rows="12"
             style="width: 100%; resize: none" placeholder="내용"
             class="form-control"></textarea>
           </div>
@@ -66,7 +70,7 @@ position: absolute;
                   </div>
             </div>
     </form>
-    </div>
-   </div>
-
+    </div> </div>
+</body>
+</html>
 <!-- by 아라 -->
