@@ -19,4 +19,3 @@ public class MenuServiceImpl implements MenuService{
 		return menuMapper.getMenuList(menuVO);
 	}
 }
-ㅇㄴㄴ
