@@ -66,6 +66,11 @@
 #hd_wrap.hd-up .gnb_dp1_wrap li.gnb_dp1:hover span:after {transform:scaleX(1);}
 #hd_wrap.hd-up .gnb_dp1_wrap li.gnb_dp1:hover span,
 #hd_wrap.hd-up .gnb_dp1_wrap li.gnb_dp1:hover a{color: #de1515;}
+
+#hd_wrap.hd-up .gnb_dp1_wrap li.gnb_dp1:hover span,
+#hd_wrap.hd-up .gnb_dp1_wrap li.gnb_dp1.active a{color: #de1515;}
+#hd_wrap.hd-up .gnb_dp1_wrap li.gnb_dp1.active span:after {transform:scaleX(1);}
+
 #hd_wrap.hd-up .gnb_dp1_wrap li.gnb_dp1 a:hover{font-weight:500;}
 #hd_wrap.hd-up .hd_bg{display:none !important;}
 
