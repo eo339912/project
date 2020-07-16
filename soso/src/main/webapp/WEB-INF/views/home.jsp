@@ -2,9 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-	<c:forEach items="${menuVO}" var="menu">
-		${menu.menunum} <br>
-	</c:forEach>
 
 <!-- 메뉴 구분-->
 <div class="slick_box menu_category">

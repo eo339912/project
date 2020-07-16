@@ -12,7 +12,6 @@ import com.soso.app.menu.service.MenuVO;
 
 @Controller
 public class HomeController {
-	d
 	@Autowired
 	MenuService menuService;
 	
