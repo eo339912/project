@@ -77,8 +77,8 @@
 				<!--  -->
 				<div class="nav-item dropdown no-arrow" style="position: absolute; right: 0; top: 0; z-index: 9;">
 	              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-	                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+	                <span class="mr-2 d-none d-lg-inline" style="font-size: 21px;">로그인</span>
+	                <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 47px; vertical-align: middle;"></i>
 	              </a>
               </div>
             
@@ -94,8 +94,6 @@
 			<ul class="con">
 				<li>웰리브의원</li>
 				<li>대구 달서구 갈밭로 6 대곡메디컬빌딩 2층</li>
-				<li><a href="javascript:GoPage('olive03')">진료시간 확인하기 →</a></li>
-				<li><a href="tel:0536330077">T. 053-633-0077</a></li>
 			</ul>
 		</div>
 		<!-- top End-->
@@ -104,10 +102,10 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div>
+          </div> -->
 
        <!-- 컨텐츠 영역 -->
        	<tiles:insertAttribute name="content"/>
@@ -123,7 +121,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; SOSORDER 2020</span>
           </div>
         </div>
       </footer>

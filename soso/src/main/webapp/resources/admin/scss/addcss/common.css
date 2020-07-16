@@ -27,7 +27,7 @@ li, dd { list-style:none; word-break:keep-all; word-break:break-word; }
 hr { display:none; }
 caption { overflow:hidden;width:100%;height:1px;font-size:1px;line-height:0;text-indent:-9999px; margin-top:-1px; }
 legend {  overflow:hidden; left:-9999px; text-indent:9999px; width:0; height:0; overflow:hidden; line-height:0; white-space:nowrap; color:#222; }
-button { padding:0; border:0; cursor:pointer; background:none; vertical-align:middle; font-size:12px; appearance: none; moz-appearance: none; border:0; *overflow:visible; outline:none;}
+/* button { padding:0; border:0; cursor:pointer; background:none; vertical-align:middle; font-size:12px; appearance: none; moz-appearance: none; border:0; *overflow:visible; outline:none;} */
 h1, h2, h3, h4, h5, h6 { padding:0px;margin:0px; }
 a, a code { color:#222; text-decoration:none;  /*마우스오버시 자연스럽게*/transition-duration: 300ms;   transition-property: color, border-color, background-color;   transition-timing-function: ease; }
 a:active, a:active code { color:#222; text-decoration:none;  /*마우스오버시 자연스럽게*/transition-duration: 300ms;   transition-property: color, border-color, background-color;   transition-timing-function: ease; }

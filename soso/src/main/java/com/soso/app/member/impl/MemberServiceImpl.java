@@ -22,13 +22,13 @@ public class MemberServiceImpl implements MemberService{
 	//member전체조회
 	@Override
 	public List<MemberVO> getMemberList(MemberVO memberVO) {
-		return null;
+		return memberMapper.getMemberList(memberVO);
 	}
 	
 	//admin등록폼
 	@Override
 	public void memberInsert(MemberVO memberVO) {
-		// TODO Auto-generated method stub
+		memberMapper.memberInsert(memberVO);
 		
 	}
 

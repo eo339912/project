@@ -53,7 +53,7 @@ public class MemberController {
 	// 가입
 	@RequestMapping("memberInsertForm")
 	public String memberInsertForm(MemberVO vo) {
-		return "loginSignUp/member/memberInsertForm";
+		return "/member/memberInsertForm";
 	}
 
 	// 등록처리
@@ -62,7 +62,7 @@ public class MemberController {
 		memberService.memberInsert(vo);
 		//서비스 호출
 		
-		return "redirect:adminList";
+		return "/member/memberLoginForm";
 		
 	}
 
