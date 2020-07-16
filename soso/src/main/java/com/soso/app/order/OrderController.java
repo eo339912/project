@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package com.soso.app.order;
 
 import org.springframework.stereotype.Controller;
@@ -21,21 +21,23 @@ public class OrderController {
 	}
 
 }
-=======
-package com.soso.app.order;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-public class OrderController {
-	
-	
-	//by혜원, 주문페이지 
-	@RequestMapping("/orderInsert")
-	public String orderInsert() {
-		return "order/orderInsert";
-	}
 
-}
->>>>>>> branch 'master' of https://github.com/eo339912/project.git
+//package com.soso.app.order;
+//
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//
+//@Controller
+//public class OrderController {
+//	
+//	
+//	//by혜원, 주문페이지 
+//	@RequestMapping("/orderInsert")
+//	public String orderInsert() {
+//		return "order/orderInsert";
+//	}
+//
+//}
+
