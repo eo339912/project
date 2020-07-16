@@ -18,7 +18,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public String home() {
 		return "home";
-	}d
+	}
 	
 	@RequestMapping("homeSample/")
 	public String homeSample(Model model, MenuVO menuVO) {
