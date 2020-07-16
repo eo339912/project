@@ -56,7 +56,7 @@
 	</insert>
 
 	<!-- <update id="updateSomething" parameterType="#modelname">
-		UPDATE tablename1
+		UPDATE tablename1d
 		SET
 		columnname1=#{param1}
 		WHERE
