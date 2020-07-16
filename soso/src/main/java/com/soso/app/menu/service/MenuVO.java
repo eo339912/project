@@ -14,7 +14,7 @@ public class MenuVO {
 	String menucontents;
 	String menucheck;
 	String storeid;
-	s
+	
 	public MenuVO(String menunum, String menuname, String menuprice, String menuimage, String menucategory,
 			String menucontents, String menucheck, String storeid) {
 		super();
