@@ -1,6 +1,5 @@
 package com.soso.app.admin.web;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -10,28 +10,27 @@ import com.soso.app.admin.service.AdminService;
 import com.soso.app.admin.service.AdminVO;
 
 @Service
-public class AdminServiceImpl implements AdminService {
+public class AdminServiceImpl  implements AdminService{
 
-	@Autowired
-	AdminMapper adminMapper;
-
-	// admin단건조회
+	@Autowired AdminMapper adminMapper;
+	
+	//admin단건조회
 	@Override
 	public AdminVO getAdmin(AdminVO adminVO) {
 		return adminMapper.getAdmin(adminVO);
 	}
 
-	// admin전체조회 슈퍼 관리자 구현시 사용
+	//admin전체조회
 	@Override
 	public List<AdminVO> getAdminList(AdminVO adminVO) {
 		return adminMapper.getAdminList(adminVO);
 	}
-
-	// admin등록폼
+	
+	//admin등록폼
 	@Override
 	public void adminInsert(AdminVO adminVO) {
-		adminMapper.adminInsert(adminVO);
-
+		// TODO Auto-generated method stub
+		
 	}
 
 }

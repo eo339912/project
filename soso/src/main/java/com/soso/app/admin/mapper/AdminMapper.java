@@ -15,8 +15,7 @@ public interface AdminMapper {
 
 	public AdminVO getAdmin(AdminVO adminVO);
 	
-	// 슈퍼 관리자만 사용 가능하도록 나중에 별도로 설정해야함
-	 public List<AdminVO> getAdminList(AdminVO adminVO); 
+	public List<AdminVO> getAdminList(AdminVO adminVO);
 
 	public void adminInsert(AdminVO adminVO);
 
