@@ -41,7 +41,7 @@
       SELECT * 
       FROM admin
       ORDER BY storeId
-   </select>
+   </select>ff
 
    
    <select id="getName" resultType="java.lang.String" parameterType="integer"> 
