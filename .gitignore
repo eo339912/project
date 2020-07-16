@@ -127,3 +127,4 @@ $RECYCLE.BIN/
 care/target/classes/log4j.xml
 
 /.DS_Store
+.classpath
