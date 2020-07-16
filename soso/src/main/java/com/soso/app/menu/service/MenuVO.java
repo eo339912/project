@@ -14,6 +14,7 @@ public class MenuVO {
 	String menuContents;
 	String menuCheck;
 	String storeId;
+
 	
 	public MenuVO(String menuNum, String menuName, String menuPrice, String menuImage, String menuCategory,
 			String menuContents, String menuCheck, String storeId) {
