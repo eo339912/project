@@ -17,6 +17,5 @@ public class MenuServiceImpl implements MenuService{
 	@Override
 	public List<MenuVO> getMenuList(MenuVO menuVO) {
 		return menuMapper.getMenuList(menuVO);
-	}
-
+	}ㄴ
 }
