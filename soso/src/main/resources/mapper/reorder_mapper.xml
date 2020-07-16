@@ -41,6 +41,12 @@
 								
 	</insert>
 
+ <select id="getmailList" parameterType="reorderVO" resultType="reorderVO">   
+      SELECT * 
+      FROM reorder
+      ORDER BY reorderNum
+   </select>
+
 	<!-- <update id="updateSomething" parameterType="#modelname">
 		UPDATE tablename1
 		SET

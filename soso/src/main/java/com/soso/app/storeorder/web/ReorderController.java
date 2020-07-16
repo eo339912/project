@@ -1,4 +1,4 @@
-package com.soso.app.storereorder.web;
+package com.soso.app.storeorder.web;
 
 import java.io.File;
 import java.util.List;
@@ -12,11 +12,14 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 
 import com.soso.app.member.mapper.MemberMapper;
 import com.soso.app.member.service.MemberVO;
-import com.soso.app.storereorder.service.ReorderVO;
+import com.soso.app.storeorder.service.ReorderService;
+import com.soso.app.storeorder.service.ReorderVO;
 
 
 @Controller
@@ -25,7 +28,8 @@ public class ReorderController {
 	private MemberMapper memberMapper;
 	@Autowired
 	private JavaMailSender mailSender;
-	
+	@Autowired
+	private ReorderService reorderService;
 	
 	@RequestMapping("mailwrite.do")
 	public String mailwrite() {
@@ -60,9 +64,10 @@ public class ReorderController {
 	@RequestMapping("sendMailAttach.do")
 	public String sendMailAttach(final ReorderVO vo,HttpServletRequest request) {
 		//발송이력저장
-	
+		vo.setStoreId("test");
+		reorderService.mailInsert(vo);
 		// 회원목록조회
-		String frommail = request.getParameter("frommail"); 
+		
 		MemberVO memberVO = new MemberVO();
 		List<MemberVO> list = memberMapper.getMemberList(memberVO);
 		// 회원목록for문
@@ -74,7 +79,7 @@ public class ReorderController {
 				@Override
 				public void prepare(MimeMessage mimeMessage) throws Exception {
 					final MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-					helper.setFrom(frommail);//어드민 메일 
+					helper.setFrom(vo.getFrommail());//어드민 메일 
 					helper.setTo(member.getEmail());
 					helper.setSubject(vo.getTitle());
 					helper.setText(vo.getContents(), true);
@@ -83,9 +88,16 @@ public class ReorderController {
 				}
 			};
 
-			mailSender.send(preparators);
-
 		}
+		mailSender.send(preparators);
 		return "home";
+	}
+	//목록조회
+	@RequestMapping("mailList")
+	public String mailList(Model model, ReorderVO reorderVO) {
+		model.addAttribute("mailList",reorderService.getmailList(reorderVO));
+		return "mail/mailList";
+		//일반 방식
+	
 	}
 }

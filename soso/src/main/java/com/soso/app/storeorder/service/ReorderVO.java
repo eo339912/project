@@ -1,4 +1,4 @@
-package com.soso.app.storereorder.service;
+package com.soso.app.storeorder.service;
 
 import java.util.Date;
 
@@ -13,6 +13,8 @@ public class ReorderVO {
 	String memberNum;
 	String storeId;
 	Date reorderDate;
+	String frommail;
+	
 	public String getTomail() {
 		return tomail;
 	}
@@ -60,6 +62,12 @@ public class ReorderVO {
 		return "ReorderVO [tomail=" + tomail + ", title=" + title + ", contents=" + contents + ", reorderNum="
 				+ reorderNum + ", memberNum=" + memberNum + ", storeId=" + storeId + ", reorderDate=" + reorderDate
 				+ "]";
+	}
+	public String getFrommail() {
+		return frommail;
+	}
+	public void setFrommail(String frommail) {
+		this.frommail = frommail;
 	}
 
 	

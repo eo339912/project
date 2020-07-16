@@ -22,23 +22,22 @@ position: absolute;
     margin: 0;
     height: 18px;
 }
- #wrapper { display: table; } #cell { display: table-cell; vertical-align: middle; }
  </style>
 
 
 <div class="centered">
-<hr class="top_bar">
+<div class="top_bar"></div>
 <div class="item">
   <h4>리-오더 보내기</h4>
     <form action="sendMailAttach.do" method="post" >
        <div>
-        <input type="text" name="frommail" size="120"
+        <input type="text" name="frommail" size="100"
         style="width: 100%" placeholder="보내는 사람 메일"
         class="form-control">
       </div> 
       <div align="center"> 
         <!-- 제목 -->
-        <input type="text" name="title" size="120" rows="30"
+        <input type="text" name="title" size="100" rows="30"
         style="width: 100%" placeholder="제목을 입력해주세요"
         class="form-control">
       </div>
