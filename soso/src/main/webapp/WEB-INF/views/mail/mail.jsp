@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <style>
 　.solid {border:2px solid #F0F;}
-</style>
-<style> .centered {display: table;
+.centered {display: table;
     top: 50%;
     position: absolute;
     left: 50%;
@@ -25,23 +22,21 @@ position: absolute;
     margin: 0;
     height: 18px;
 }
-</style> 
-<style> #wrapper { display: table; } #cell { display: table-cell; vertical-align: middle; } </style>
+ #wrapper { display: table; } #cell { display: table-cell; vertical-align: middle; }
+ </style>
 
-<head><title></title>
-</head>
-<body>
+
 <div class="centered">
 <hr class="top_bar">
 <div class="item">
   <h4>리-오더 보내기</h4>
-    <form action="sendMailAttach.do" method="post">
-      <div>
-        <input type="text" name="tomail" size="120"
-        style="width: 100%" placeholder="상대의 이메일"
+    <form action="sendMailAttach.do" method="post" >
+       <div>
+        <input type="text" name="frommail" size="120"
+        style="width: 100%" placeholder="보내는 사람 메일"
         class="form-control">
-      </div>
-      <div align="center">
+      </div> 
+      <div align="center"> 
         <!-- 제목 -->
         <input type="text" name="title" size="120" rows="30"
         style="width: 100%" placeholder="제목을 입력해주세요"
@@ -50,7 +45,7 @@ position: absolute;
         <p>
           <div align="center">
           <!-- 내용 -->
-            <textarea name="content" cols="120" rows="12"
+            <textarea name="contents" cols="120" rows="12"
             style="width: 100%; resize: none" placeholder="내용"
             class="form-control"></textarea>
           </div>
@@ -72,7 +67,7 @@ position: absolute;
                   </div>
             </div>
     </form>
-    </div> </div>
-</body>
-</html>
+    </div>
+   </div>
+
 <!-- by 아라 -->

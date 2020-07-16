@@ -1,4 +1,4 @@
-package com.soso.app.mail;
+package com.soso.app.storereorder.web;
 
 import java.io.File;
 import java.util.List;
@@ -16,14 +16,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.soso.app.member.mapper.MemberMapper;
 import com.soso.app.member.service.MemberVO;
+import com.soso.app.storereorder.service.ReorderVO;
 
 
 @Controller
-public class MailController {
+public class ReorderController {
 	@Autowired
 	private MemberMapper memberMapper;
 	@Autowired
 	private JavaMailSender mailSender;
+	
+	
 	@RequestMapping("mailwrite.do")
 	public String mailwrite() {
 		return "mail/mail";
@@ -36,15 +39,16 @@ public class MailController {
 		String setfrom = "";
 		String tomail = request.getParameter("tomail"); // 받는 사람 이메일
 		String title = request.getParameter("title"); // 제목
-		String content = request.getParameter("content"); // 내용
-
+		String contents = request.getParameter("contents"); // 내용
+		String frommail = request.getParameter("frommail"); 
+		
 		try {
 			MimeMessage message = mailSender.createMimeMessage();
 			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 			messageHelper.setFrom("zszs6363@gmail.com"); // 보내는사람 생략하면 정상작동을 안함
 			messageHelper.setTo(tomail); // 받는사람 이메일
 			messageHelper.setSubject(title); // 메일제목은 생략이 가능하다
-			messageHelper.setText(content); // 메일 내용
+			messageHelper.setText(contents); // 메일 내용
 			mailSender.send(message);
 		} catch (Exception e) {
 			System.out.println(e);
@@ -54,8 +58,11 @@ public class MailController {
 	}
 
 	@RequestMapping("sendMailAttach.do")
-	public String sendMailAttach(final MailVO vo) {
+	public String sendMailAttach(final ReorderVO vo,HttpServletRequest request) {
+		//발송이력저장
+	
 		// 회원목록조회
+		String frommail = request.getParameter("frommail"); 
 		MemberVO memberVO = new MemberVO();
 		List<MemberVO> list = memberMapper.getMemberList(memberVO);
 		// 회원목록for문
@@ -67,10 +74,10 @@ public class MailController {
 				@Override
 				public void prepare(MimeMessage mimeMessage) throws Exception {
 					final MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-					helper.setFrom("zszs6363@gmail.com");
+					helper.setFrom(frommail);//어드민 메일 
 					helper.setTo(member.getEmail());
 					helper.setSubject(vo.getTitle());
-					helper.setText(vo.getContent(), true);
+					helper.setText(vo.getContents(), true);
 					FileSystemResource file = new FileSystemResource(new File("D:/test/test.jpg"));
 					helper.addAttachment("test.jpg", file);
 				}
