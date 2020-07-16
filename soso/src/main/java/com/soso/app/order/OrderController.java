@@ -1,3 +1,4 @@
+
 package com.soso.app.order;
 
 import org.springframework.stereotype.Controller;
@@ -12,5 +13,9 @@ public class OrderController {
 	public String orderInsert() {
 		return "order/orderInsert";
 	}
+	
 
 }
+
+
+

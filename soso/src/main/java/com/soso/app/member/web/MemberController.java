@@ -22,34 +22,32 @@ public class MemberController {
 	
 	@RequestMapping("memberLoginForm")
 	public String memberLoginForm(MemberVO vo, Model model,HttpSession session,HttpServletRequest request, HttpServletResponse response) {
-		return "basic/member/memberLoginForm";
+		return "/member/memberLoginForm";
 	}
 	
 	//로그인
 	@RequestMapping("memberLogin")
 	public String memberLogin(MemberVO vo, Model model,HttpSession session,HttpServletRequest request, HttpServletResponse response) {
 		String path = null;
-		String phone = (String) request.getAttribute("phone");
-		/*
-		 * vo. memberMapper.getMember(vo);
-		 */
+		MemberVO dbVO = memberService.getMember(vo);
 		
-		if (vo.getPhone() == null && vo.getPhone() != phone) {
+		//&& !vo.getPhone().equals(dbVO.getPhone())
+		
+		if (dbVO == null ) {
 	         model.addAttribute("errorMsg", "id오류");
-	          path = "basic/member/memberLoginForm";
+	          path = "/member/memberLoginForm";
 	         
-	      } else if (!vo.getPwd().equals(request.getAttribute("pwd"))) {
+	      } else if (!vo.getPwd().equals(dbVO.getPwd())) {
 	    	  model.addAttribute("errorMsg", "pwd오류");
-	    	  path = "basic/member/memberLoginForm";
+	    	  path = "/member/memberLoginForm";
 
 	      } else {
 	         session.setAttribute("phone", vo.getPhone());
 	         session.setAttribute("pwd", vo.getPwd());
-	         path = "home";
+	         path = "redirect:/";
 	      }
 		return path;
 	}
-	
 	
 	
 	// 가입

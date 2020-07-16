@@ -4,6 +4,7 @@
 <html>
 <script src="https:////cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	var formInputs = $('input[type="text"],input[type="password"]');
@@ -184,7 +185,7 @@ input[type="submit"].login:focus{outline: none;}
 </g>
 </svg>
 </div>
-	<form action="/soso/memberLogin" method="post" name="frm" >
+	<form action="memberLogin" method="post" name="frm" >
 		<div class="form-item">
 			<p class="formLabel">Phone</p>
 			<input type="text" name="phone" id="phone" class="form-style"
@@ -198,16 +199,14 @@ input[type="submit"].login:focus{outline: none;}
 			<p>
 				</p>	
 		</div>
-		<div class="form-item">
-		<p class="pull-left">
-					<a href="/soso/"><small>일반가입</small></a>
-					<a href="#"><small>사업자가입</small></a>
-				</p>
-				
 		<input type="submit" class="login pull-right" value="Log In">
-		<div class="clear-fix"></div>
-		</div>
-	</form>	
+		</form>
+		<form action="memberInsertForm" method="post" name="frm1">
+		<input type="submit" class="login pull-right" value="일반가입">
+		</form>
+		<form action="adminInsertForm" method="post" name="frm2">
+		<input type="submit" class="login pull-right" value="사업자가입">
+		</form>
 </div>
 </div>
 </body>

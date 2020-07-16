@@ -42,7 +42,7 @@ public class EmpController {
 								@RequestParam(required = false, defaultValue = "kim", value = "lastName") String ln,
 								@RequestParam Map map
 			) {
-		System.out.println(vo.getFirstName() + ":" + vo.getLastName());
+//		System.out.println(vo.getFirstName() + ":" + vo.getLastName());
 		System.out.println("parameter:" + firstName + ":" + ln);
 		System.out.println("map" + map.get("firstName") + ":"+ map.get("lastName"));
 		//model.addAttribute("evo", vo);
