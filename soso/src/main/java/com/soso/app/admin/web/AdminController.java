@@ -1,6 +1,5 @@
 package com.soso.app.admin.web;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,23 +17,19 @@ public class AdminController {
 	AdminService adminService;
     
 
-	//admin사업자 등록폼
+	//사업자 등록폼
 	@RequestMapping("adminInsertForm")
 	public String adminInsertForm(AdminVO vo) {
-		return "/admin/adminInsertForm";
+		return "basic/admin/adminInsertForm";
 	}
 
-	//admin사업자 등록폼
+	// 등록처리
 	@RequestMapping("adminInsert")
-	public String adminInsert(AdminVO vo, Model model,HttpSession session) {
+	public String adminInsert(AdminVO vo, Model model) {
 		adminService.adminInsert(vo);
-        session.setAttribute("storeId", vo.getStoreId());
-        session.setAttribute("storePwd", vo.getStorePwd());
-        session.setAttribute("storeName", vo.getStoreName());
-        session.setAttribute("storeNum", vo.getStoreNum());
-        session.setAttribute("storeAddr", vo.getStoreAddr());
-        session.setAttribute("accountNum", vo.getAccountNum());
-		return "redirect:/";
+		//서비스 호출
+		
+		return "redirect:adminList";
 		
 	}
 
