@@ -16,5 +16,5 @@ public class OrderCptVO {
 	String orderCount;
 	String orderNum;
 	
-
+;
 }
